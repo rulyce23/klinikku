@@ -42,7 +42,6 @@ $('.search-form form').submit(function(){
 	'itemsCssClass'=>'table table-striped table-bordered table-hover',
 	'filter'=>$model,
 	'columns'=>array(
-		'id_pasien',
 		'tgl_masuk',
 		'nm_pasien',
 		'tempat_lahir',

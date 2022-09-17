@@ -41,7 +41,6 @@ $('.search-form form').submit(function(){
 	'filter'=>$model,
 	'itemsCssClass'=>'table table-striped table-bordered table-hover',
 	'columns'=>array(
-		'id_wilayah',
 		'nm_wilayah',
 		'kodepos',
 		'kecamatan',
