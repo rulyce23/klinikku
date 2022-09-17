@@ -3,7 +3,25 @@
 /* @var $model BiayaObat */
 /* @var $form CActiveForm */
 ?>
+<? 
 
+echo"<script type='text/javascript'>
+
+function addText() 
+
+{
+
+var x = document.getElementById('hrga.value');
+
+var y = document.getElementById('jmlh.value');
+
+document.getElementById.hitung.value = (x*y);
+
+}
+
+</script>";
+
+?>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -47,19 +65,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'harga'); ?>
-		<?php echo $form->textField($model,'harga',array('id'=>'hrga')); ?>
+		<?php echo $form->textField($model,'harga',array('id'=>'hrga','onfocus'=>'javascript: addText();')); ?>
 		<?php echo $form->error($model,'harga'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'jumlah'); ?>
-		<?php echo $form->textField($model,'jumlah',array('id'=>'jmlh','size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'jumlah',array('id'=>'jmlh','size'=>60,'maxlength'=>255,'onfocus'=>'javascript: addText();')); ?>
 		<?php echo $form->error($model,'jumlah'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'harga_total'); ?>
-		<?php echo $form->textField($model,'harga_total'); ?>
+		<?php echo $form->textField($model,'harga_total',array('id'=>'hitung','onfocus'=>'javascript: addText();')); ?>
 		<?php echo $form->error($model,'harga_total'); ?>
 	</div>
 
@@ -69,25 +87,5 @@
 
 <?php $this->endWidget(); ?>
 
-<script>
-	$('#hitung').on('click', function(e) {
-    e.preventDefault();
-    var hrga = new Array();
-    $("[id^='hrga']").each( function() {
-      hrga.push($(this).val());
-    });
-    
-    var jmlh = new Array();
-    $("[id^='jmlh']").each( function() {
-      jmlh.push($(this).val());
-    });
-    
-    var ttl=0;
-    $.each(hrga, function(i, q) {
-      ttl+=q*jmlh[i];
-    });
-    $('#total').val(ttl);
-  }); 
-</script>
 
 </div><!-- form -->
