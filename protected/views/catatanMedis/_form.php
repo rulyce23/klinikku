@@ -23,7 +23,7 @@
 		<?php echo $form->labelEx($model,'id_pasien'); ?>
 		<?php echo $form->dropDownList($model,'id_pasien',
 		CHtml::listData(Pasien::model()->findAll(),
-		'id_pasien','nm_pasien'),
+		'id_user','nm_pasien'),
 		array("empty"=>"Pilih Pasien"));
 		 ?>
 		<?php echo $form->error($model,'id_pasien'); ?>
@@ -68,7 +68,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tgl_tindakan'); ?>
-		<?php echo $form->textField($model,'tgl_tindakan',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->hiddenField($model,'tgl_tindakan',array('size'=>10,'maxlength'=>10,'readonly'=>true,'value'=>date('Y-m-d'))); ?>
 		<?php echo $form->error($model,'tgl_tindakan'); ?>
 	</div>
 

@@ -85,6 +85,7 @@ class CatatanMedisController extends Controller
 		{
 			$model->attributes=$_POST['CatatanMedis'];
 			if($model->save())
+			$model->id_user==$model->id_pasien;
 				$this->redirect(array('view','id'=>$model->id_medis));
 		}
 
@@ -161,10 +162,13 @@ class CatatanMedisController extends Controller
 
 		$model=new CatatanMedis('search');
 		$modeluser=new Users('search');
+		$modelpasien= new Pasien('search');
+
 		$model->unsetAttributes();  // clear any default values
+		$model->id_pasien=Yii::app()->user->id;
 		if(isset($_GET['CatatanMedis']))
 			$model->attributes=$_GET['CatatanMedis'];	
-		$modeluser->username=Yii::app()->user->id;
+		
 		
 		$this->render('adminview',array(
 			'model'=>$model,

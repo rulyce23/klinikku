@@ -52,7 +52,7 @@ $('.search-form form').submit(function(){
 			  'buttons' => array(
                   'viewme' => array(
                     'label' => 'Lihat Riwayat Medis',
-                    'url' => 'Yii::app()->createUrl("catatanMedis/viewme", array("id_medis"=>$data->id_medis))',
+                    'url' => 'Yii::app()->createUrl("catatanMedis/view2", array("id_medis"=>$data->id_medis))',
                     'imageUrl' => Yii::app()->baseUrl . '/icon/view.png',
                 ),
 		),
