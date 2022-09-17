@@ -1,0 +1,14 @@
+.go-top{
+position:fixed;
+bottom:25px;
+right:25px;
+text-decoration: none;
+color:#fff;
+padding:10px 10px;
+background: rgba(0,0,0, 0.2);
+font-size:12px;
+display:none;
+}
+.go-top:hover{
+	background:rgba(0,0,0, 0.5);
+}
