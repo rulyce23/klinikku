@@ -80,7 +80,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'jam_selesai'); ?>
-		<?php echo $form->textField($model,'jam_selesai'); ?>
+		<?php echo $form->hiddenField($model,'jam_selesai',array('readonly'=>true,'value'=>date('H:i'))); ?>
 		<?php echo $form->error($model,'jam_selesai'); ?>
 	</div>
 
