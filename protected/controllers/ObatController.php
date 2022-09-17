@@ -139,15 +139,21 @@ class ObatController extends Controller
 			$model->attributes=$_GET['Obat'];
 
 
-			$model2=new BiayaObat('search');
+		$model2=new BiayaObat('search');
 		$model2->unsetAttributes();  // clear any default values
 		if(isset($_GET['BiayaObat']))
-			$model2->attributes=$_GET['BiayaObat'];
+		$model2->attributes=$_GET['BiayaObat'];
+
+		$model3=new Pasien('search');
+		$model3->unsetAttributes();  // clear any default values
+		if(isset($_GET['Pasien']))
+		$model3->attributes=$_GET['Pasien'];
 
 
 		$this->render('admin',array(
 			'model'=>$model,
 			'model2'=>$model2,
+			'model3'=>$model3,
 		));
 	}
 

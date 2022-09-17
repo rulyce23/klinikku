@@ -53,8 +53,9 @@ class Pasien extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			 'Pasien' => array(self::BELONGS_TO, 'Obat','id_pasien'),
-			
+			 'Pasien' => array(self::HAS_MANY, 'Obat','id_pasien'),
+			 'Babat' => array(self::HAS_MANY, 'BiayaObat','id_pasien'),
+			 
 		);
 	}
 	/**

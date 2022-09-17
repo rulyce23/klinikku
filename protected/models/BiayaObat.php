@@ -49,8 +49,8 @@ class BiayaObat extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			 'User' => array(self::HAS_MANY, 'Users','id_user'),
-			 'Obat'=>array(self::HAS_MANY, 'Obat','id_obat'),
-			 'Pasien'=>array(self::HAS_MANY, 'Pasien','id_pasien'),
+			 'Obat'=>array(self::BELONGS_TO, 'Obat','id_obat'),
+			 'Pasi'=>array(self::BELONGS_TO, 'Pasien','id_pasien'),
 			
 		);
 	}

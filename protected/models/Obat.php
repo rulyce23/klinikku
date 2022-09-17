@@ -48,8 +48,9 @@ class Obat extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			 'Pasien' => array(self::HAS_MANY, 'Pasien','id_pasien'),
+			 'Pasienx' => array(self::BELONGS_TO, 'Pasien','id_pasien'),
 			 'BiayaObat'=>array(self::BELONGS_TO, 'BiayaObat','id_biaya'),
+			 'Obat'=>array(self::HAS_MANY, 'BiayaObat','id_obat'),
 			
 		);
 	}

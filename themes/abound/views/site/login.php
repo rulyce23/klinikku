@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 ?>
 
 <div class="page-header">
-	<center><h1>Login <small>ke account anda</small></h1></center>
+	<center><h1>Login <small>ke akun anda</small></h1></center>
 </div>
 <div class="row-fluid">
 	

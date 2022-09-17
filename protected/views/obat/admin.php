@@ -60,7 +60,13 @@ $('.search-form form').submit(function(){
 	'filter'=>$model2,
 	'itemsCssClass'=>'table table-striped table-bordered table-hover',
 	'columns'=>array(
-	'id_pasien',
+	'Pasi.nm_pasien',
+	array(
+		'name' => 'Obat.nm_obat',
+		'value' => function($data) {
+			return $data->Obat->nm_obat;
+		}
+	),
 		'harga',
 		'jumlah',
 		/*
