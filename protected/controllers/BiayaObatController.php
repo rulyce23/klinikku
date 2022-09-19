@@ -71,6 +71,7 @@ class BiayaObatController extends Controller
 		{
 			$model->attributes=$_POST['BiayaObat'];
 			if($model->save())
+			$model->id_user==$model->id_pasien;
 				$this->redirect(array('view','id'=>$model->id_biaya));
 		}
 

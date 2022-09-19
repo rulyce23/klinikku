@@ -42,10 +42,10 @@ $('.search-form form').submit(function(){
 	'itemsCssClass'=>'table table-striped table-bordered table-hover',
 	'columns'=>array(
 		'id_medis',
-		'id_pasien',
-		'id_dokter',
-		'id_wilayah',
-		'id_obat',
+		'User.username',
+		'Dokter.nm_dokter',
+		'Wilayah.nm_wilayah',
+		'Obat.nm_obat',
 		'diagnosa',
 		/*
 		'tgl_tindakan',
@@ -56,4 +56,55 @@ $('.search-form form').submit(function(){
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+));
+$bb=array();
+
+foreach($aa->getData() as $i=>$ii)
+
+	$bb[$i]=array($ii['id_pasien'],($ii['diagnosa']));
+
+
+$this->Widget('ext.yiihighcharts.highcharts.HighchartsWidget', array(
+
+   'options'=>array(
+
+      'series' => array(
+
+         array('type'=>'pie',
+
+               'data' => $bb
+
+              )
+
+      ),
+
+      'title' => array('text' => 'E-Klinik Data Result'),
+
+      'tooltip' => array(
+
+		'formatter' => 'js:function(){ return "<b>"+this.point.name+"</b> :"+this.y; }'
+
+      ),
+
+      'plotOptions'=>array('pie'=>(array(
+
+                    'allowPointSelect'=>true,
+
+                    'showInLegend'=>true,
+
+                    'cursor'=>'pointer',
+
+                )
+
+            )                       
+
+        ),
+
+      'credits'=>array('enabled'=>false),
+
+   )
+
+));
+
+?>
+

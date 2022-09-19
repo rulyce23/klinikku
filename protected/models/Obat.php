@@ -50,6 +50,7 @@ class Obat extends CActiveRecord
 		return array(
 			 'Pasienx' => array(self::BELONGS_TO, 'Pasien','id_pasien'),
 			 'BiayaObat'=>array(self::BELONGS_TO, 'BiayaObat','id_biaya'),
+			 'Obats'=>array(self::HAS_MANY, 'CatatanMedis','id_obat'),
 			 'Obat'=>array(self::HAS_MANY, 'BiayaObat','id_obat'),
 			
 		);

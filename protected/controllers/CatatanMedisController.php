@@ -152,11 +152,20 @@ class CatatanMedisController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['CatatanMedis']))
 			$model->attributes=$_GET['CatatanMedis'];
+			$sql='SELECT * FROM catatan_medis';
+			$aa=new CSqlDataProvider($sql,array(
 
+								'keyField' => 'id',
+
+			));
 		$this->render('admin',array(
 			'model'=>$model,
+			'aa'=>$aa
 		));
 	}
+
+
+
 
 	public function actionAdminview(){
 

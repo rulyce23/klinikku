@@ -40,8 +40,8 @@ document.getElementById.hitung.value = (x*y);
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_pasien'); ?>
 		<?php echo $form->dropDownList($model,'id_pasien',
-		CHtml::listData(Pasien::model()->findAll(),
-		'id_pasien','nm_pasien'),
+		CHtml::listData(User::model()->findAll(),
+		'id_user','nm_pasien'),
 		array("empty"=>"Pilih Pasien"));
 		 ?>
 		<?php echo $form->error($model,'id_pasien'); ?>

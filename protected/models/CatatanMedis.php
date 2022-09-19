@@ -51,16 +51,17 @@ class CatatanMedis extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			 'User' => array(self::HAS_MANY, 'Users','id_user'),
-			 'Obat'=>array(self::HAS_MANY, 'Obat','id_obat'),
-			 'Dokter'=>array(self::HAS_MANY, 'Dokter','id_dokter'),
-			 'Pasien'=>array(self::HAS_MANY, 'Pasien','id_pasien'),
-			 'Wilayah'=>array(self::HAS_MANY,'Wilayah','id_wilayah'),
-			 'Biaya'=>array(self::HAS_MANY,'BiayaObat','id_biaya'),
+			 'User' => array(self::BELONGS_TO, 'Users','id_user'),
+			 'Obat'=>array(self::BELONGS_TO, 'Obat','id_obat'),
+			 'Dokter'=>array(self::BELONGS_TO, 'Dokter','id_dokter'),
+			 'Pasien'=>array(self::BELONGS_TO, 'Pasien','id_pasien'),
+			 'Wilayah'=>array(self::BELONGS_TO,'Wilayah','id_wilayah'),
+			 'Biaya'=>array(self::BELONGS_TO,'BiayaObat','id_biaya'),
 			
 		);
 	}
 
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

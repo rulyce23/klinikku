@@ -55,6 +55,7 @@ class Pasien extends CActiveRecord
 		return array(
 			 'Pasien' => array(self::HAS_MANY, 'Obat','id_pasien'),
 			 'Babat' => array(self::HAS_MANY, 'BiayaObat','id_pasien'),
+			 'Babat2'=> array(self::HAS_MANY, 'CatatanMedis','id_pasien'),
 			 
 		);
 	}

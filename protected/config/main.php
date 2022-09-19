@@ -1,5 +1,6 @@
 <?php
 Yii::setPathOfAlias('editable', dirname(__FILE__).'/../extensions/x-editable');
+Yii::setPathOfAlias('chartjs', dirname(__FILE__).'/../extensions/yii-chartjs');
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
@@ -10,7 +11,7 @@ return array(
 	'theme'=>'abound',
 
 	// preloading 'log' component
-	'preload'=>array('log'),
+	'preload'=>array('log','chartjs'),
 
 	// autoloading model and component classes
 	'import'=>array(
