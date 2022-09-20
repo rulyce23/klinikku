@@ -41,7 +41,7 @@ document.getElementById.hitung.value = (x*y);
 		<?php echo $form->labelEx($model,'id_pasien'); ?>
 		<?php echo $form->dropDownList($model,'id_pasien',
 		CHtml::listData(User::model()->findAll(),
-		'id_user','nm_pasien'),
+		'id_user','username'),
 		array("empty"=>"Pilih Pasien"));
 		 ?>
 		<?php echo $form->error($model,'id_pasien'); ?>
